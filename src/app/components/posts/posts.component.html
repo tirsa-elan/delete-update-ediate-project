@@ -1,0 +1,69 @@
+<div class="container overflow-hidden">
+  <div class="row align-items-center">
+    <div class="h1 col py-3">
+        فرم لیست
+    </div>
+    <div class="col py-3 text-end">
+        <button class="btn btn-secondary" type="button" (click)="openAddModal()" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          <i class="bi bi-plus-square-fill"></i>
+          <span class="h4" >افزودن</span>
+        </button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr class="h4" >
+        <th scope="col">کد </th>
+        <th scope="col">عنوان</th>
+        <th scope="col">نظرات</th>
+        <th scope="col">تغییرات</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let data of posts; let i=index">
+      <tr class="h4" >
+        <td>{{data.id}}</td>
+        <td>{{data.title}}</td>
+        <td>{{data.views}}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="deletePost(data.id, i)">
+            <i class="bi bi-trash"></i>
+            <span>حذف</span>
+          </button>
+          <button type="button" class="btn btn-info" (click)="updateMethode(data)" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            <i class="bi bi-pencil-fill"></i>
+            <span>ویرایش</span>
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{modalStatus === "I" ? 'افزودن' : 'ویرایش' }}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input class="form-control" [(ngModel)]="postDetail.id" [disabled]="modalStatus === 'U'"
+            id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter id">
+          <br>
+          <input class="form-control" [(ngModel)]="postDetail.title" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Enter tittle">
+          <br>
+
+          <input type="number" [(ngModel)]="postDetail.views" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Enter viewe">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="savePost()">ذخیره </button>
+        </div>
+      </div>
+    </div>
+  </div>

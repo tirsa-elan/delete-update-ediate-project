@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "تست یک",
+      "views": 1
+    },
+    {
+      "id": "2",
+      "title": "تست دو",
+      "views": 2
+    },
+    {
+      "id": "3",
+      "title": "تست  سه",
+      "views": 3
+    },
+    {
+      "id": "4",
+      "title": "تست   چهار",
+      "views": 4
+    },
+    {
+      "id": "5",
+      "title": "تست   پنج",
+      "views": 5
+    },
+    {
+      "id": "6",
+      "title": "تست   شش",
+      "views": 6
+    },
+    {
+      "id": "7",
+      "title": "تست    هفت",
+      "views": 7
+    },
+    {
+      "id": "rfrf",
+      "title": "refre",
+      "views": 32
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": null
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": null
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
